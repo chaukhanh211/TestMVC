@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-horizontal">
+    <h4 class="h4">Delete</h4>
+    <form action="/SinhViens/Delete" method="POST">
+        <div class="form-group">
+            <table class="table">
+                <tr>
+                    <td> <label>Mã sinh viên</label></td>
+                    <td><input type="text" name="MASV" value="@Model.MASV" /> </td>
+                </tr>
+                <tr>
+                    <td> <label>Họ tên</label></td>
+                    <td><input type="text" name="HOTEN" value="@Model.HOTEN" /></td>
+                </tr>
+            </table>
+            <div>
+                <input type="submit" value="Delete" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+</div>
+
+

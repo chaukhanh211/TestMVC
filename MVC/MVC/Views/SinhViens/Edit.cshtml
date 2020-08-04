@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="form-horizontal">
+        <h4 class="h4">Edit</h4>
+        <form action="/SinhViens/Edit" method="POST">
+            <div class="form-group">
+                <table class="table">
+                    <tr>
+                        <td> <label>Mã sinh viên</label></td>
+                        <td><input type="text" name="MASV" value="@Model.MASV" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <label>Họ tên</label></td>
+                        <td><input type="text" name="HOTEN" value="@Model.HOTEN" /></td>
+                    </tr>
+                    <tr>
+                        <td> <label>Ngày sinh</label></td>
+                        @*<td> <input type="date" name="name" value="@Model.NGAYSINH.Date" /></td>*@
+                        <td><input type="date" name="NGAYSINH" id="last-start-date" value="@string.Format("{0:yyyy-MM-dd}", Model.NGAYSINH)" /> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Giới tính</label>
+                        </td>
+                        @if (Model.PHAI)
+                        {
+                            <td>
+                                <input type="radio" name="PHAI" value="1" checked="checked" />Nam
+                                <input type="radio" name="PHAI" value="0" /> Nữ
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                <input type="radio" name="PHAI" value="1" />Nam
+                                <input type="radio" name="PHAI" value="0" checked="checked" /> Nữ
+                            </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Quê quán</label>
+                        </td>
+                        <td>
+                            <input type="text" name="QUEQUAN" value="@Model.QUEQUAN" />
+                        </td>
+                    </tr>
+
+                </table>
+                <div>
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+            </form>
+    </div>
+
+

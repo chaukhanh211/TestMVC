@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-horizontal">
+    <h4 class="h4">Add</h4>
+    <form action="/SinhViens/Add" method="POST">
+        <div class="form-group">
+            <table class="table">
+                <tr>
+                    <td> <label>Mã sinh viên</label></td>
+                    <td><input type="text" name="MASV" value="" /> </td>
+                </tr>
+                <tr>
+                    <td> <label>Họ tên</label></td>
+                    <td><input type="text" name="HOTEN" value="" /></td>
+                </tr>
+                <tr>
+                    <td> <label>Ngày sinh</label></td>
+                    @*<td> <input type="date" name="name" value="@Model.NGAYSINH.Date" /></td>*@
+                    <td><input type="date" name="NGAYSINH" id="last-start-date" value="" /> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Giới tính</label>
+                    </td>
+                        <td>
+                            <input type="radio" name="PHAI" value="1" />Nam
+                            <input type="radio" name="PHAI" value="0" /> Nữ
+                        </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Quê quán</label>
+                    </td>
+                    <td>
+                        <input type="text" name="QUEQUAN" value="" />
+                    </td>
+                </tr>
+
+            </table>
+            <div>
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+</div>
